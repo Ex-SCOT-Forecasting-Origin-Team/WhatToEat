@@ -1,6 +1,25 @@
 # WhatToEat
 
+## Setting up Windows Subsystem For Linux
+Instructions from https://learn.microsoft.com/en-us/windows/wsl/install
+
+Start PowerShell and run it as administrator. (Right-click then "Run as administrator")
+
+Check if you have WSL already installed by running the below command in the PowerShell
+```
+wsl -l -v
+```
+
+Install WSL by running the below command in the PowerShell
+```
+wsl --install
+```
+
+Restart your computer
+
 ## Install Python Virtual Environment
+
+Don't use /mnt/c/ as the project directory. Use /home/... instead.
 
 ### For Window, Linux
 ```
@@ -22,3 +41,5 @@ python3 -m http.server 8000
 ```
 
 Browse to http://localhost:8000/
+
+
