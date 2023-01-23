@@ -30,6 +30,7 @@ sudo apt-get install python3 python3-pip python3-venv python3-wheel python3-setu
 ```
 python3 -m venv env
 ```
+Don't commit env
 ### Activate virtual environment
 ```
 source env/bin/activate
