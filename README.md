@@ -43,4 +43,56 @@ python3 -m http.server 8000
 
 Browse to http://localhost:8000/
 
+## Setting up React
+Instructions from https://reactjs.org/docs/create-a-new-react-app.html#create-react-app
+
+Run the following commands
+```
+npx create-react-app my-app
+cd my-app
+npm start
+```
+
+### Issue 1: node is not installed
+Run 
+```
+sudo apt-get install nodejs npm
+node --version
+npm --version
+```
+
+### Issue 2: node version is not correct
+You’ll need to have Node >= 14.0.0 and npm >= 5.6 on your machine.
+
+Instructions from https://www.esparkinfo.com/blog/how-to-update-node-js-to-latest-version.html
+
+Update package and install NVM (Node Version Manager)
+```
+sudo apt update
+sudo apt install build-essential checkinstall libssl-dev
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.35.1/install.sh | bash
+```
+Check if nvm is installed
+```
+nvm –version
+```
+Check new nvm releases
+```
+nvm ls-remote
+```
+Install the correct node version
+```
+nvm install [version.number]
+```
+
+Clear NPM Cache and install nvm
+```
+npm cache clean –f
+npm install -g n
+```
+
+
+
+
+
 
