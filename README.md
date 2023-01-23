@@ -15,7 +15,7 @@ Install WSL by running the below command in the PowerShell
 wsl --install
 ```
 
-Restart your computer
+Restart your computer. Then open Ubuntu to start Windows Subsystem For Linux.
 
 ## Install Python Virtual Environment
 
