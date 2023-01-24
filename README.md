@@ -96,8 +96,15 @@ npm cache clean –f
 npm install -g n
 ```
 
+### Remove unused files
+```
+cd src
+rm -f *
+```
 
-
-
-
+## Test React
+```
+cd my-app
+npm start
+```
 
