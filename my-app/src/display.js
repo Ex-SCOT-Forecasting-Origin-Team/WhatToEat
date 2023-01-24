@@ -1,30 +1,38 @@
 import React from 'react';
+import { createSearchParams, useNavigate } from 'react-router-dom';
 
 
-class Display extends React.Component {
-    render() {
-      return (
-        
-        <div >
-          WhatToEat
-          <br />
-          <br />
-          <br />
-            <button>
-                Chinese
-            </button>
-            <button>
-                American
-            </button>
-            <button>
-                Mexican
-            </button>
-            <button>
-                Korean
-            </button>
-        </div>
-      );
-    }
-  }
+function Display() {
+  const navigate = useNavigate();
+  const navigateToCuisine = (nationality) => {  
+    navigate({
+      pathname: "/cuisine",
+      search: createSearchParams({
+        nationality: nationality
+      }).toString()
+    }); 
+  };
+
+  return (
+    <div >
+      WhatToEat
+      <br />
+      <br />
+      <br />
+        <button onClick={() => navigateToCuisine('Chinese')}>
+          Chinese
+        </button>
+        <button onClick={() => navigateToCuisine('American')}>
+            American
+        </button>
+        <button onClick={() => navigateToCuisine('Mexican')}>
+            Mexican
+        </button>
+        <button onClick={() => navigateToCuisine('Korean')}>
+            Korean
+        </button>
+    </div>
+  );
+};
 
 export default Display;
