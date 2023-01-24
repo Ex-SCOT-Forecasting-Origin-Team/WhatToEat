@@ -108,6 +108,12 @@ cd my-app
 npm start
 ```
 
+## Google API 
+
+```
+npm i -D @types/google.maps
+```
+
 ## Navigating to another page resources
 https://stackoverflow.com/questions/44387318/linking-button-to-another-page
 
