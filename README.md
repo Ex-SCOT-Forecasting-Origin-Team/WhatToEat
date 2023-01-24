@@ -87,7 +87,7 @@ nvm ls-remote
 ```
 Install the correct node version
 ```
-nvm install [version.number]
+nvm install v16.0.0
 ```
 
 Clear NPM Cache and install nvm
@@ -107,4 +107,10 @@ rm -f *
 cd my-app
 npm start
 ```
+
+## Navigating to another page resources
+https://stackoverflow.com/questions/44387318/linking-button-to-another-page
+https://plainenglish.io/blog/how-to-pass-data-between-pages-in-react-router-dom-v6
+
+
 
