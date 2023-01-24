@@ -1,5 +1,10 @@
 # WhatToEat
 
+## Meeting Schedule 
+Next Meeting: 2023-01-25
+
+Previous Meetings: [Doc](https://github.com/Ex-SCOT-Forecasting-Origin-Team/WhatToEat/blob/main/Meeting%20Schedule)
+
 ## Setting up Windows Subsystem For Linux
 Instructions from https://learn.microsoft.com/en-us/windows/wsl/install
 
