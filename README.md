@@ -110,6 +110,7 @@ npm start
 
 ## Navigating to another page resources
 https://stackoverflow.com/questions/44387318/linking-button-to-another-page
+
 https://plainenglish.io/blog/how-to-pass-data-between-pages-in-react-router-dom-v6
 
 
