@@ -113,6 +113,7 @@ npm start
 
 https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API#examples
 
+https://www.youtube.com/watch?v=NZI_POvnrZ4&list=PLVdOXfrKzalQzsYqNsluiaTwSftIzEFNs
 
 Not needed right now but we will need it if we wanna use geolocation api to work with Google Maps API
 ```
