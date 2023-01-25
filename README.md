@@ -1,7 +1,8 @@
 # WhatToEat
 
 ## Meeting Schedule 
-Next Meeting: 2023-01-25
+Next Meeting: 2023-01-25 9:30am PST
+Meeting Location: https://cuboulder.zoom.us/j/2986824351
 
 Previous Meetings: [Doc](https://github.com/Ex-SCOT-Forecasting-Origin-Team/WhatToEat/blob/main/Meeting%20Schedule)
 
