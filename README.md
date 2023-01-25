@@ -108,8 +108,12 @@ cd my-app
 npm start
 ```
 
-## Google API 
+## Location API
 
+https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API/Using_the_Geolocation_API#examples
+
+
+Not needed right now but we will need it if we wanna use geolocation api to work with Google Maps API
 ```
 npm i -D @types/google.maps
 ```
