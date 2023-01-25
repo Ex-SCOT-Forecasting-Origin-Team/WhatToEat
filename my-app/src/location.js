@@ -29,7 +29,6 @@ export function geoFindMe() {
     </div>
     );
   };
-  const status = document.querySelector('#status');
   const mapLink = document.querySelector('#map-link');
   if(mapLink){
     document.querySelector('#find-me').addEventListener('click', geoFindMe);

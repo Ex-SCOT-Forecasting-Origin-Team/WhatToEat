@@ -35,6 +35,7 @@ function Display() {
         <button onClick={() => geoFindMe()}>
           Show my location
         </button>
+        
         <p id="status"></p>
         <a id="map-link" target="_blank"></a>
          
