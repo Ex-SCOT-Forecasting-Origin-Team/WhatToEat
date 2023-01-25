@@ -1,6 +1,6 @@
 import React from 'react';
 import { createSearchParams, useNavigate } from 'react-router-dom';
-
+import { geoFindMe } from './location.js';
 
 function Display() {
   const navigate = useNavigate();
@@ -10,7 +10,7 @@ function Display() {
       search: createSearchParams({
         nationality: nationality
       }).toString()
-    }); 
+    });
   };
 
   return (
@@ -31,6 +31,11 @@ function Display() {
         <button onClick={() => navigateToCuisine('Korean')}>
             Korean
         </button>
+
+        <button onClick={() => geoFindMe()}>
+          Show my location
+        </button>
+         
     </div>
   );
 };
