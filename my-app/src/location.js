@@ -32,6 +32,5 @@ export function geoFindMe() {
   const status = document.querySelector('#status');
   const mapLink = document.querySelector('#map-link');
   if(mapLink){
-    console.log("gere")
     document.querySelector('#find-me').addEventListener('click', geoFindMe);
   }
