@@ -10,6 +10,35 @@ Monday, Wednesday, Friday 9:30am on Discord
 
 Previous Meetings: [Doc](https://github.com/Ex-SCOT-Forecasting-Origin-Team/WhatToEat/blob/main/Meeting%20Schedule)
 
+## Creating a Pull Request
+From https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request?tool=cli#creating-the-pull-request
+
+### Install github CLI
+```
+sudo apt install gh
+```
+You might need to authenticate the device by following the directions in the command line.
+### Create another branch and checkout
+Create the branch
+```
+git branch <user-id>
+```
+Check that the branch <user-id> is created
+```
+git branch
+```
+Checkout
+```
+git checkout <user-id>
+```
+### Create a Pull Request
+```
+gh pr create
+```
+
+
+
+
 ## Setting up Windows Subsystem For Linux
 Instructions from https://learn.microsoft.com/en-us/windows/wsl/install
 
