@@ -1,8 +1,12 @@
 # WhatToEat
 
 ## Meeting Schedule 
-Next Meeting: 2023-01-25 9:30am PST
-Meeting Location: https://cuboulder.zoom.us/j/2986824351
+Monday, Wednesday, Friday 9:30am on Discord
+
+- Discuss what we did the previous day in terms of functionality
+- Explain to each other the code we wrote (Knowledge sharing session)
+- Plan next task
+- Leetcode question
 
 Previous Meetings: [Doc](https://github.com/Ex-SCOT-Forecasting-Origin-Team/WhatToEat/blob/main/Meeting%20Schedule)
 
