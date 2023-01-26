@@ -20,16 +20,5 @@ export function geoFindMe() {
       status.textContent = 'Locating…';
       navigator.geolocation.getCurrentPosition(success, error);
     }
-    return(
-    <div>
-    <button id="find-me">Show my location</button><br />
-    <p id="status"></p>
-    <a id="map-link" target="_blank"></a>
-    
-    </div>
-    );
   };
-  const mapLink = document.querySelector('#map-link');
-  if(mapLink){
-    document.querySelector('#find-me').addEventListener('click', geoFindMe);
-  }
+ 
