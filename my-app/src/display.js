@@ -20,9 +20,8 @@ function Display() {
 
   return (
     <div >
-      {/* <button onClick={() => navigateToCuisine('Home')}>
-            WhatToEat
-        </button> */}
+      WhatToEat
+      
       <br />
       <br />
       <p id="status"></p>
