@@ -21,6 +21,7 @@ function Display() {
   return (
     <div >
       WhatToEat
+      
       <br />
       <br />
       <p id="status"></p>
@@ -40,9 +41,6 @@ function Display() {
         <button onClick={() => navigateToCuisine('Korean')}>
             Korean
         </button>
-        
-        <p id="status"></p>
-        <a id="map-link" target="_blank"></a>
          
     </div>
   );
