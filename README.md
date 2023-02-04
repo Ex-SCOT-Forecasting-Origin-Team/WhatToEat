@@ -8,7 +8,7 @@ Monday, Wednesday, Friday 9:30am on Discord
 - Plan next task
 - Leetcode question
 
-Previous Meetings: [Doc](https://github.com/Ex-SCOT-Forecasting-Origin-Team/WhatToEat/blob/main/Meeting%20Schedule)
+Previous Meetings: [Doc](https://docs.google.com/document/d/169mFkeDQcx4nGffc1K6rjbUyA9hWo1WWJWtnkwXFHL8/edit)
 
 ## Creating a Pull Request
 From https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request?tool=cli#creating-the-pull-request
