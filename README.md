@@ -161,5 +161,6 @@ https://stackoverflow.com/questions/44387318/linking-button-to-another-page
 
 https://plainenglish.io/blog/how-to-pass-data-between-pages-in-react-router-dom-v6
 
-
+## Database & Backend 
+https://docs.google.com/document/d/16e_uCIdn3m7rtMfEkXx_4-udMogtSqlLD4nLF_hzWww/edit?usp=sharing
 
