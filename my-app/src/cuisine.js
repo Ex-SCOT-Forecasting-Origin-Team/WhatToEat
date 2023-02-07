@@ -1,7 +1,7 @@
 import React from 'react';
-import { createSearchParams, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useSearchParams } from 'react-router-dom';
-
+import './css/index.css'
 
 function Cuisine() {
     const navigate = useNavigate();
