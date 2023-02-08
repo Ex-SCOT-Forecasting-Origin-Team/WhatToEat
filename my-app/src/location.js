@@ -4,9 +4,6 @@ export function geoFindMe() {
     function success(position) {
       latitude  = position.coords.latitude;
       longitude = position.coords.longitude;
-      // status.textContent = '';
-      // mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
-      // mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
       return [latitude, longitude]
     }
     function error() {

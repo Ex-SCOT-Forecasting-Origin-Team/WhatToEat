@@ -18,61 +18,49 @@ function Display() {
 
   // Effect Hook: https://reactjs.org/docs/hooks-effect.html
   useEffect(() => {
-    var location =geoFindMe();
+    var location = geoFindMe();
   });
 
   const [searchParams] = useSearchParams();
 
   return (
-    <div style={{ background: '#EBE2D9' }} id="main">
-    <br />
-    <div class="WhatToEat"> 
-      What To
+    <div id="main">
       <br />
-      Eat
+      <div class="WhatToEat"> 
+        What To
+        <br />
+        Eat
       </div>
-      <p id="status"></p>
-      <a id="map-link" target="_blank"></a>
-      <div class="row">
-          <button class="button" onClick={() => navigateToCuisine('Chinese')} >
-              <img src={require('./Images/Chinese.jpg')} alt="Food" height={200} width={200}></img>
-              <span>Chinese</span>   
-          </button>
-          <button class="button" onClick={() => navigateToCuisine('American')} >
-              <img src={require('./Images/American.jpg')} alt="Food" height={200} width={200}></img>
-              <span>American</span>   
-          </button>
-          
-          <button class="button" onClick={() => navigateToCuisine('Mexican')} >
-              <img src={require('./Images/Mexican.jpg')} alt="Food" height={200} width={200}></img>
-              <span>Mexican</span>  
-          </button>
-           
-          <button class="button" onClick={() => navigateToCuisine('Korean')} >
-              <img src={require('./Images/Korean.jpg')} alt="Food" height={200} width={200}></img>
-              <span>Korean</span>  
-          </button>
-    </div>
-    <div class="row">
-          <button class="button" onClick={() => navigateToCuisine('Chinese')} >
-              <img src={require('./Images/Chinese.jpg')} alt="Food" height={200} width={200}></img>
-              <span>Chinese</span>   
-          </button>
-          <button class="button" onClick={() => navigateToCuisine('American')} >
-              <img src={require('./Images/American.jpg')} alt="Food" height={200} width={200}></img>
-              <span>American</span>   
-          </button>
-          
-          <button class="button" onClick={() => navigateToCuisine('Mexican')} >
-              <img src={require('./Images/Mexican.jpg')} alt="Food" height={200} width={200}></img>
-              <span>Mexican</span>  
-          </button>
-           
-          <button class="button" onClick={() => navigateToCuisine('Korean')} >
-              <img src={require('./Images/Korean.jpg')} alt="Food" height={200} width={200}></img>
-              <span>Korean</span>  
-          </button>
-    </div>
+        <div class='rowContainer'>
+            <div class="row">
+                <button class="button" onClick={() => navigateToCuisine('American')} >
+                    <img src={require('./Images/American.jpg')} alt="Food"></img>
+                    <span>Chinese</span>   
+                </button>
+                <button class="button" onClick={() => navigateToCuisine('American')} >
+                    <img src={require('./Images/American.jpg')} alt="Food"></img>
+                    <span>American</span>   
+                </button>
+                <button class="button" onClick={() => navigateToCuisine('Mexican')} >
+                    <img src={require('./Images/Mexican.jpg')} alt="Food"></img>
+                    <span>Mexican</span>  
+                </button>
+          </div>
+          <div class="row">
+                <button class="button" onClick={() => navigateToCuisine('Chinese')} >
+                    <img src={require('./Images/Chinese.jpg')} alt="Food"></img>
+                    <span>Chinese</span>   
+                </button>
+                <button class="button" onClick={() => navigateToCuisine('American')} >
+                    <img src={require('./Images/American.jpg')} alt="Food"></img>
+                    <span>American</span>   
+                </button>
+                <button class="button" onClick={() => navigateToCuisine('Mexican')} >
+                    <img src={require('./Images/Mexican.jpg')} alt="Food"></img>
+                    <span>Mexican</span>  
+                </button>
+          </div>
+      </div>
     </div>
   );
 };
