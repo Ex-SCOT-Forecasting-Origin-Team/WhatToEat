@@ -1,7 +1,9 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useSearchParams } from 'react-router-dom';
-import './css/index.css'
+import React, { useEffect, useState } from 'react';
+import { useSearchParams, useNavigate } from 'react-router-dom';
+
+import { geoFindMe } from './location.js';
+import './css/cuisine.css';
+
 
 function Cuisine() {
     const navigate = useNavigate();
@@ -9,16 +11,64 @@ function Cuisine() {
         navigate({
         pathname: "/"
         });
-    };
-
+    };;
     const [searchParams] = useSearchParams();
     return (
         <div>
-            <button onClick={() => navigateToHome()}>
-            WhatToEat
-        </button>
-            <img src={require('./Images/' + searchParams.get('nationality') + '.jpg')} alt="Food" height={200} width={200}></img>
-            <p> Results for: { searchParams.get('nationality') }</p>
+            <br />
+            <button class="WhatToEat" onClick={() => navigateToHome()}> 
+                What To
+                Eat
+            </button>
+            <div class="mainContent">
+                <div class="mainImage">
+                    <img src={require('./Images/' + searchParams.get('nationality') + '.jpg')} alt="Food"></img>
+                </div>
+                <div class="nearbyrestaurants">
+                    <br></br>
+                    <br></br>
+                    <div class="restaurants">
+                        <div class="restaurantImage">
+                            <img src={require('./Images/' + searchParams.get('nationality') + '.jpg')} alt="Food"></img>
+                        </div>
+                        <div class="restaurantInfo">
+                            <span class="restaurantName">Restaurant Name</span>  
+                            <br></br> 
+                            <span class="restaurantDistance">.5 MILES</span>        
+                        </div>
+                    </div>
+                    <div class="restaurants">
+                        <div class="restaurantImage">
+                            <img src={require('./Images/' + searchParams.get('nationality') + '.jpg')} alt="Food"></img>
+                        </div>
+                        <div class="restaurantInfo">
+                            <span class="restaurantName">Restaurant Name</span>  
+                            <br></br> 
+                            <span class="restaurantDistance">.5 MILES</span>        
+                        </div>
+                    </div>
+                    <div class="restaurants">
+                        <div class="restaurantImage">
+                            <img src={require('./Images/' + searchParams.get('nationality') + '.jpg')} alt="Food"></img>
+                        </div>
+                        <div class="restaurantInfo">
+                            <span class="restaurantName">Restaurant Name</span>  
+                            <br></br> 
+                            <span class="restaurantDistance">.5 MILES</span>        
+                        </div>
+                    </div>
+                    <div class="restaurants">
+                        <div class="restaurantImage">
+                            <img src={require('./Images/' + searchParams.get('nationality') + '.jpg')} alt="Food"></img>
+                        </div>
+                        <div class="restaurantInfo">
+                            <span class="restaurantName">Restaurant Name</span>  
+                            <br></br> 
+                            <span class="restaurantDistance">.5 MILES</span>        
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }
