@@ -38,6 +38,7 @@ function Cuisine() {
                     <Marker position={{lat: latitude, lng: longitude}} />
                 </GoogleMap>
                 <GoogleMap id='map2'></GoogleMap>
+                <p id='restaurantList'></p>
             </div>
         )
     }
@@ -52,10 +53,32 @@ function Cuisine() {
         };
 
         service.nearbySearch(request, function(results, status) {
-            console.log(status)
+            console.log("Call Google nearbySearch API")
+            const restaurantList = document.getElementById('restaurantList')
+            restaurantList.textContent = ""
             if (status === window.google.maps.places.PlacesServiceStatus.OK) {
-              console.log("finally")
-              console.log(results[0].geometry.location.lat())
+              console.log("Google nearbySearch API loaded successfully")
+              for (let i = 0; i<5 && i <results.length; i++){
+                const restaurantHtml = document.createElement("ul")
+                const nameNode = document.createElement("li");
+                let name =  document.createTextNode("name: " + results[i].name);
+                const latlngNode = document.createElement("li");
+                let latlong =  document.createTextNode("latitude: " + results[i].geometry.location.lat() + " longitude: " + results[i].geometry.location.lng());
+                const priceNode = document.createElement("li");
+                let price =  document.createTextNode("price: " + results[i].price_level);
+                const ratingNode = document.createElement("li");
+                let rating =  document.createTextNode("rating: " + results[i].rating);
+                nameNode.appendChild(name);
+                latlngNode.appendChild(latlong);
+                priceNode.appendChild(price);
+                ratingNode.appendChild(rating);
+
+                restaurantHtml.appendChild(nameNode);
+                restaurantHtml.appendChild(latlngNode);
+                restaurantHtml.appendChild(priceNode);
+                restaurantHtml.appendChild(ratingNode);
+                restaurantList.append(restaurantHtml);
+              }
             }
         });
     }
