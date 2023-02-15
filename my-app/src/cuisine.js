@@ -108,8 +108,9 @@ function Cuisine() {
     }
 
 
+    const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY
     const { isLoaded } = useJsApiLoader({
-        googleMapsApiKey: "AIzaSyAVa_kbWiQaQH9gqZhzq3EqKYuRR8h8chw",
+        googleMapsApiKey: googleMapsApiKey,
         libraries: ['places']
     });
     if (!isLoaded) return <div>Loading</div>
