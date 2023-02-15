@@ -44,7 +44,7 @@ func New() {
 }
 
 func GetUsers(requestCtx * atreugo.RequestCtx) error {
-	var users [][]any
+	var users []string
 	var userInfo UserInfo
 
 	rows, err := whattoeatDB.Query(ctx, `SELECT username FROM whattoeat`)
@@ -55,11 +55,11 @@ func GetUsers(requestCtx * atreugo.RequestCtx) error {
 
 	for rows.Next() {
 		rows.Scan(&userInfo.Username)
-		users = append(users, []any{userInfo.Username})
+		users = append(users, userInfo.Username)
 	}
 
 	LogHTTP(http.StatusOK, requestCtx)
-	return requestCtx.JSONResponse(map[string][][]any{"users": users}, http.StatusOK)
+	return requestCtx.JSONResponse(map[string][]string{"users": users}, http.StatusOK)
 }
 
 
