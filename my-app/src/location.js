@@ -1,23 +1,22 @@
 export function geoFindMe() {
-    const status = document.querySelector('#status');
-    const mapLink = document.querySelector('#map-link');
-    mapLink.href = '';
-    mapLink.textContent = '';
+  var latitude;
+  var longitude;
     function success(position) {
-      const latitude  = position.coords.latitude;
-      const longitude = position.coords.longitude;
-      status.textContent = '';
-      mapLink.href = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
-      mapLink.textContent = `Latitude: ${latitude} °, Longitude: ${longitude} °`;
+      latitude  = position.coords.latitude;
+      longitude = position.coords.longitude;
+      return [latitude, longitude]
     }
     function error() {
-      status.textContent = 'Unable to retrieve your location';
+      latitude = -1;
+      longitude = -1;
     }
     
     if (!navigator.geolocation) {
-      status.textContent = 'Geolocation is not supported by your browser';
+      latitude = -2;
+      longitude = -2;
     } else {
-      status.textContent = 'Locating…';
+      latitude = -1;
+      longitude = -1;
       navigator.geolocation.getCurrentPosition(success, error);
     }
   };

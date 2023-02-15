@@ -8,7 +8,7 @@ Monday, Wednesday, Friday 9:30am on Discord
 - Plan next task
 - Leetcode question
 
-Previous Meetings: [Doc](https://github.com/Ex-SCOT-Forecasting-Origin-Team/WhatToEat/blob/main/Meeting%20Schedule)
+Previous Meetings: [Doc](https://docs.google.com/document/d/169mFkeDQcx4nGffc1K6rjbUyA9hWo1WWJWtnkwXFHL8/edit)
 
 ## Creating a Pull Request
 From https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request?tool=cli#creating-the-pull-request
@@ -36,6 +36,9 @@ git checkout <user-id>
 gh pr create
 ```
 
+## Figma 
+
+https://www.figma.com/file/aP9ZmGtDTVD4Zw885sAEp2/WhatToEat?node-id=0%3A1&t=pdZPtQD6AjnBeXGZ-1
 
 
 
@@ -158,5 +161,6 @@ https://stackoverflow.com/questions/44387318/linking-button-to-another-page
 
 https://plainenglish.io/blog/how-to-pass-data-between-pages-in-react-router-dom-v6
 
-
+## Database & Backend 
+https://docs.google.com/document/d/16e_uCIdn3m7rtMfEkXx_4-udMogtSqlLD4nLF_hzWww/edit?usp=sharing
 

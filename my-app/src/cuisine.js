@@ -1,9 +1,8 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
-import { createSearchParams, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useSearchParams } from 'react-router-dom';
 import { GoogleMap, useJsApiLoader , Marker} from "@react-google-maps/api";
-import "./css/cuisine.css"
-
+import './css/index.css'
 
 function Cuisine() {
     const navigate = useNavigate();
