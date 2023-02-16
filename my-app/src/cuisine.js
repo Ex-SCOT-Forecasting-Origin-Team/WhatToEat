@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
-
+import WhatToEat from './WhatToEat';
 import { geoFindMe } from './location.js';
 import './css/cuisine.css';
 
@@ -16,10 +16,7 @@ function Cuisine() {
     return (
         <div>
             <br />
-            <button class="WhatToEat" onClick={() => navigateToHome()}> 
-                What To
-                Eat
-            </button>
+            <WhatToEat />
             <div class="mainContent">
                 <div class="mainImage">
                     <img src={require('./Images/' + searchParams.get('nationality') + '.jpg')} alt="Food"></img>

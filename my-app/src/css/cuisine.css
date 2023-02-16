@@ -1,21 +1,3 @@
-.WhatToEat{
-    font-family: 'Julius Sans One';
-    width: 237px;
-    height: 103px;
-    left: 59px;
-    top: 83px;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 50px;
-    color: #000000;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    margin-top: 25px;
-    margin-left: 130px;
-    background: None;
-    border: None;
-    text-align: left;
-  }
-
   .mainContent {
     display: flex;
     flex-direction: row;
@@ -29,6 +11,17 @@
     text-align: center;
     padding: 50px 0;
     border-radius: 20px;
+    object-fit: cover;
+  }
+
+  .mainImage img {
+    width: 1200px;
+    height: 700px;
+    border-radius: 20px;
+    margin-left: 75px;
+    object-fit: cover;
+    border: 2px solid black;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 
   .nearbyrestaurants {
@@ -38,13 +31,6 @@
     padding: 50px 0;
     border-radius: 20px;
     margin-top: -50px;
-  }
-
-  .mainImage img {
-    width: 1200px;
-    height: 700px;
-    border-radius: 20px;
-    margin-left: 75px;
   }
 
   .restaurants {
@@ -73,6 +59,7 @@
     border: 2px solid black;
     border-radius: 20px;
     margin-left: 10px;
+    object-fit: cover;
   }
 
   .restaurantInfo{
