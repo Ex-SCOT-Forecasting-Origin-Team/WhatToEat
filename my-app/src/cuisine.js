@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useSearchParams } from 'react-router-dom';
-import { GoogleMap, useJsApiLoader , Marker} from "@react-google-maps/api";
-import './css/index.css'
+import React, { useEffect, useState } from 'react';
+import { useSearchParams, useNavigate } from 'react-router-dom';
+
+import { geoFindMe } from './location.js';
+import './css/cuisine.css';
+
 
 function Cuisine() {
     const navigate = useNavigate();
@@ -10,112 +11,66 @@ function Cuisine() {
         navigate({
         pathname: "/"
         });
-    };
+    };;
     const [searchParams] = useSearchParams();
-    const [latitude, setLatitude] = useState(0);
-    const [longitude, setLongitude] = useState(0);
-
-   function Map() {
-        return (
-            <div>
-                <button onClick={() => navigateToHome()}>
-                WhatToEat
-                </button>
-                <img src={require('./Images/' + searchParams.get('nationality') + '.jpg')} alt="Food" height={200} width={200}></img>
-                <p> Results for: { searchParams.get('nationality') }</p>
-                <button onClick={() => nearbySearch()}>
-                searchNearbyRestaurant
-                </button>
-                <button onClick={() => addMarker()}>
-                addMarker
-                </button>
-                <GoogleMap
-                    zoom={10}
-                    center={{ lat: latitude, lng: longitude}}
-                    mapContainerClassName="map-container"
-                    id='map'
-                >
-                    <Marker position={{lat: latitude, lng: longitude}} />
-                </GoogleMap>
-                <GoogleMap id='map2'></GoogleMap>
-                <p id='restaurantList'></p>
+    return (
+        <div>
+            <br />
+            <button class="WhatToEat" onClick={() => navigateToHome()}> 
+                What To
+                Eat
+            </button>
+            <div class="mainContent">
+                <div class="mainImage">
+                    <img src={require('./Images/' + searchParams.get('nationality') + '.jpg')} alt="Food"></img>
+                </div>
+                <div class="nearbyrestaurants">
+                    <br></br>
+                    <br></br>
+                    <div class="restaurants">
+                        <div class="restaurantImage">
+                            <img src={require('./Images/' + searchParams.get('nationality') + '.jpg')} alt="Food"></img>
+                        </div>
+                        <div class="restaurantInfo">
+                            <span class="restaurantName">Restaurant Name</span>  
+                            <br></br> 
+                            <span class="restaurantDistance">.5 MILES</span>        
+                        </div>
+                    </div>
+                    <div class="restaurants">
+                        <div class="restaurantImage">
+                            <img src={require('./Images/' + searchParams.get('nationality') + '.jpg')} alt="Food"></img>
+                        </div>
+                        <div class="restaurantInfo">
+                            <span class="restaurantName">Restaurant Name</span>  
+                            <br></br> 
+                            <span class="restaurantDistance">.5 MILES</span>        
+                        </div>
+                    </div>
+                    <div class="restaurants">
+                        <div class="restaurantImage">
+                            <img src={require('./Images/' + searchParams.get('nationality') + '.jpg')} alt="Food"></img>
+                        </div>
+                        <div class="restaurantInfo">
+                            <span class="restaurantName">Restaurant Name</span>  
+                            <br></br> 
+                            <span class="restaurantDistance">.5 MILES</span>        
+                        </div>
+                    </div>
+                    <div class="restaurants">
+                        <div class="restaurantImage">
+                            <img src={require('./Images/' + searchParams.get('nationality') + '.jpg')} alt="Food"></img>
+                        </div>
+                        <div class="restaurantInfo">
+                            <span class="restaurantName">Restaurant Name</span>  
+                            <br></br> 
+                            <span class="restaurantDistance">.5 MILES</span>        
+                        </div>
+                    </div>
+                </div>
             </div>
-        )
-    }
-
-    const nearbySearch = () => {
-        let currentPos = new window.google.maps.LatLng(latitude, longitude);
-        var service = new window.google.maps.places.PlacesService(document.getElementById('map2'));
-        var request = {
-            type: ['restaurant'],
-            location: currentPos,
-            radius: '500',
-        };
-
-        service.nearbySearch(request, function(results, status) {
-            console.log("Call Google nearbySearch API")
-            const restaurantList = document.getElementById('restaurantList')
-            restaurantList.textContent = ""
-            if (status === window.google.maps.places.PlacesServiceStatus.OK) {
-              console.log("Google nearbySearch API loaded successfully")
-              for (let i = 0; i<5 && i <results.length; i++){
-                const restaurantHtml = document.createElement("ul")
-                const nameNode = document.createElement("li");
-                let name =  document.createTextNode("name: " + results[i].name);
-                const latlngNode = document.createElement("li");
-                let latlong =  document.createTextNode("latitude: " + results[i].geometry.location.lat() + " longitude: " + results[i].geometry.location.lng());
-                const priceNode = document.createElement("li");
-                let price =  document.createTextNode("price: " + results[i].price_level);
-                const ratingNode = document.createElement("li");
-                let rating =  document.createTextNode("rating: " + results[i].rating);
-                nameNode.appendChild(name);
-                latlngNode.appendChild(latlong);
-                priceNode.appendChild(price);
-                ratingNode.appendChild(rating);
-
-                restaurantHtml.appendChild(nameNode);
-                restaurantHtml.appendChild(latlngNode);
-                restaurantHtml.appendChild(priceNode);
-                restaurantHtml.appendChild(ratingNode);
-                restaurantList.append(restaurantHtml);
-              }
-            }
-        });
-    }
-
-    // TODO add markers of the nearbyRestaurant to the app
-    const addMarker = () => {
-        // console.log(document.getElementById('map'));
-        // let map = new window.google.maps.Map(document.getElementById("map2"));
-        // const marker = new window.google.maps.Marker({
-        //     map,
-        //     position: new window.google.maps.LatLng(-33.8665433,151.1956316),
-        //   });
-    }
-
-
-    function success(position) {
-        setLatitude(position.coords.latitude)
-        setLongitude(position.coords.longitude)
-    }
-
-    function error() {
-        console.log("load current position failed")
-    }
-
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(success, error);
-    }
-
-
-    const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY
-    const { isLoaded } = useJsApiLoader({
-        googleMapsApiKey: googleMapsApiKey,
-        libraries: ['places']
-    });
-    if (!isLoaded) return <div>Loading</div>
-    return <Map />;
-
+        </div>
+    );
 }
 
 export default Cuisine;

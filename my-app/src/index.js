@@ -7,6 +7,7 @@ import Cuisine from './cuisine'
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
     <BrowserRouter>
         <Routes>
