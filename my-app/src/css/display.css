@@ -4,8 +4,8 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: left;
-  width: 80%;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   overflow-y: scroll;
   scrollbar-width: thin;
 }
@@ -16,17 +16,36 @@ body, html {
   background-color: #EBE2D9;
 }
 
-.rowContainer{
-  width: 1950px;
-  overflow-x: auto;
-  white-space: nowrap;
-
+.rowContainer
+  width: 100%;
+  /* white-space: normal; */
 }
+
 .row {
   margin-top: 50px;
   display: flex;
   padding: 10px;
   justify-content: space-between;
+  margin: 0 auto;
+  max-width: 90%;
+  overflow-y: auto;
+}
+
+.button {
+  width: 445px;
+  height: 246px;
+  flex-direction: column;
+  align-items: center;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 20px;
+  margin-right: 20px;
+}
+
+.button img {
+  width: 444px;
+  height: 240px;
+  border-radius: 20px;
+  object-fit: cover;
 }
 
 .button {
@@ -48,7 +67,6 @@ body, html {
   background-size: cover;
 }
 
-/* this needs work */
 .button span {
   font-family: 'Julius Sans One';
   font-size: 45px;
@@ -59,38 +77,16 @@ body, html {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #8BB9AE;
+  color: #FFFFFF;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px 20px;
 }
-
-.WhatToEat{
-  font-family: 'Julius Sans One';
-  width: 237px;
-  height: 108px;
-  left: 59px;
-  top: 83px;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 50px;
-  color: #000000;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  margin-top: 25px;
-  margin-left: 130px;
-  background: None;
-  border: None;
-  text-align: left;
-}
-
-
 ::-webkit-scrollbar {
   width: 5px;
 }
 
 /* Track */
 .invisible-scrollbar::-webkit-scrollbar-track {
-  /* box-shadow: inset 0 0 5px #FFFFFF;
-  border-radius: 5px;
-  width: 20px;
-  height: 20px; */
   display: none;
 }
 
@@ -101,9 +97,4 @@ body, html {
   border-radius: 5px;
   width: 5px;
   height: 5px;
-}
-
-.map-container {
-  width: 100%;
-  height: 100vh;
 }

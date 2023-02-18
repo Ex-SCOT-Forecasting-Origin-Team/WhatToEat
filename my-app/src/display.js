@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { createSearchParams, useNavigate } from 'react-router-dom';
 import { useSearchParams } from 'react-router-dom';
-import { geoFindMe } from './location.js';
+import WhatToEat from './WhatToEat';
 import './css/display.css';
 
 
@@ -21,20 +21,12 @@ function Display() {
     });
 };
 
-  // Effect Hook: https://reactjs.org/docs/hooks-effect.html
-  useEffect(() => {
-    var location = geoFindMe();
-  });
-
   const [searchParams] = useSearchParams();
 
   return (
     <div id="main">
-      <br />
-      <button class="WhatToEat" onClick={() => navigateToHome()}> 
-            What To
-            Eat
-      </button>
+        <br />
+            <WhatToEat />
         <div class='rowContainer'>
             <div class="row">
                 <button class="button" onClick={() => navigateToCuisine('American')} >
@@ -49,8 +41,30 @@ function Display() {
                     <span>Mexican</span>  
                     <img src={require('./Images/Mexican.jpg')} alt="Food"></img>
                 </button>
+                <button class="button" onClick={() => navigateToCuisine('Sushi')} >
+                    <img src={require('./Images/Sushi.jpg')} alt="Food"></img>
+                    <span>Sushi</span>   
+                </button>
+                <button class="button" onClick={() => navigateToCuisine('Chinese')} >
+                    <img src={require('./Images/Chinese.jpg')} alt="Food"></img>
+                    <span>Chinese</span>   
+                </button>
+                <button class="button" onClick={() => navigateToCuisine('groupVoting')} >
+                    <img src={require('./Images/groupVoting.jpg')} alt="Food"></img>
+                </button>
           </div>
           <div class="row">
+                <button class="button" onClick={() => navigateToCuisine('Sushi')} >
+                    <img src={require('./Images/Sushi.jpg')} alt="Food"></img>
+                    <span>Sushi</span>   
+                </button>
+                <button class="button" onClick={() => navigateToCuisine('Chinese')} >
+                    <img src={require('./Images/Chinese.jpg')} alt="Food"></img>
+                    <span>Chinese</span>   
+                </button>
+                <button class="button" onClick={() => navigateToCuisine('groupVoting')} >
+                    <img src={require('./Images/groupVoting.jpg')} alt="Food"></img>
+                </button>
                 <button class="button" onClick={() => navigateToCuisine('Sushi')} >
                     <img src={require('./Images/Sushi.jpg')} alt="Food"></img>
                     <span>Sushi</span>   

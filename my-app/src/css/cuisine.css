@@ -1,3 +1,108 @@
+
+.mainContent {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  height: 100vh; /* set the height of the container to the full height of the viewport */
+}
+
+.mainImage {
+  width: 80%;
+  background-color: #EBE2D9;
+  text-align: center;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.mainImage img {
+  width: 1200px;
+  height: 700px;
+  border-radius: 20px;
+  margin-left: 75px;
+  object-fit: cover;
+  border: 2px solid black;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.nearbyrestaurants {
+  width: 30%;
+  background-color: #EBE2D9;
+  text-align: center;
+  border-radius: 20px;
+  margin-top: -50px;
+}
+
+.restaurants {
+  width: 20%;
+  background-color: lightblue;
+  border: 1px solid black;
+  height: 65px;
+  margin: 10px;
+  margin-left: 10px;
+  width: 500px;
+  padding: 50px 0;
+  border-radius: 20px;
+  text-align: left;
+}
+
+.restaurantImage {
+  width: 20%;
+  text-align: center;
+  border-radius: 20px;
+  margin-top: -30px;
+}
+
+.restaurantImage img{
+  height: 125px;
+  width: 125px;
+  border: 2px solid black;
+  border-radius: 20px;
+  margin-left: 10px;
+  object-fit: cover;
+}
+
+.restaurantInfo{
+  width: 80%;
+  text-align: center;
+  font-family: Julius Sans One;
+  margin-top: -125px;
+  text-align: center;
+}
+
+.restaurantName {
+  font-family: 'Julius Sans One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 27px;
+  margin-left: 90px;
+  white-space: nowrap;
+}
+
+.restaurantDistance {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0em;
+  margin-top: -100px;
+  margin-left: -35px;
+}
+
+
+body, html {
+  height: 100%;
+  background-color: #EBE2D9;
+  overflow: hidden
+}
+
+/* .parent {
+pointer-events:none;  
+background: url('../Images/American.jpg');      
+}
+.child {
+pointer-events:auto;
+background: url('../Images/Korean.jpg');
+=======
 .WhatToEat{
     font-family: 'Julius Sans One';
     width: 237px;
