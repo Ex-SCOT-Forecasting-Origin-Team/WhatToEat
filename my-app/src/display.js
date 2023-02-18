@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { createSearchParams, useNavigate } from 'react-router-dom';
 import { useSearchParams } from 'react-router-dom';
-import { geoFindMe } from './location.js';
 import WhatToEat from './WhatToEat';
 import './css/display.css';
 
@@ -17,17 +16,12 @@ function Display() {
     });
   };
 
-  // Effect Hook: https://reactjs.org/docs/hooks-effect.html
-  useEffect(() => {
-    var location = geoFindMe();
-  });
-
   const [searchParams] = useSearchParams();
 
   return (
     <div id="main">
         <br />
-        <WhatToEat />
+            <WhatToEat />
         <div class='rowContainer'>
             <div class="row">
                 <button class="button" onClick={() => navigateToCuisine('American')} >

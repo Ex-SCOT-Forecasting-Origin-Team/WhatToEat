@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import WhatToEat from './WhatToEat';
-import { geoFindMe } from './location.js';
+import Map from './Map';
+import { GoogleMap, useJsApiLoader , Marker} from "@react-google-maps/api";
 import './css/cuisine.css';
 
 
@@ -12,6 +13,7 @@ function Cuisine() {
         pathname: "/"
         });
     };;
+
     const [searchParams] = useSearchParams();
     return (
         <div>
@@ -19,7 +21,8 @@ function Cuisine() {
             <WhatToEat />
             <div class="mainContent">
                 <div class="mainImage">
-                    <img src={require('./Images/' + searchParams.get('nationality') + '.jpg')} alt="Food"></img>
+                    <Map />
+                    {/* <img src={require('./Images/' + searchParams.get('nationality') + '.jpg')} alt="Food"></img> */}
                 </div>
                 <div class="nearbyrestaurants">
                     <br></br>
