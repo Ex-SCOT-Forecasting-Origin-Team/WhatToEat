@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import WhatToEat from './WhatToEat';
 import Map from './Map';
-import { GoogleMap, useJsApiLoader , Marker} from "@react-google-maps/api";
 import './css/cuisine.css';
 
 
