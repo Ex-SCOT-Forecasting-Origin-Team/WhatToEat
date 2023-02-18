@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { createSearchParams, useNavigate } from 'react-router-dom';
 import { useSearchParams } from 'react-router-dom';
 import WhatToEat from './WhatToEat';
