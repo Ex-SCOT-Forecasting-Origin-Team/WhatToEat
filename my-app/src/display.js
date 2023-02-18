@@ -15,6 +15,11 @@ function Display() {
       }).toString()
     });
   };
+  const navigateToHome = (nationality) => {  
+    navigate({
+    pathname: "/"
+    });
+};
 
   const [searchParams] = useSearchParams();
 
@@ -71,6 +76,7 @@ function Display() {
                 <button class="button" onClick={() => navigateToCuisine('groupVoting')} >
                     <img src={require('./Images/groupVoting.jpg')} alt="Food"></img>
                 </button>
+
           </div>
       </div>
     </div>

@@ -164,3 +164,9 @@ https://plainenglish.io/blog/how-to-pass-data-between-pages-in-react-router-dom-
 ## Database & Backend 
 https://docs.google.com/document/d/16e_uCIdn3m7rtMfEkXx_4-udMogtSqlLD4nLF_hzWww/edit?usp=sharing
 
+## Create Google Map API KEY
+1. Create an api key using https://developers.google.com/maps/documentation/embed/get-api-key
+2. Add a file called `.env.local` inside `my-app`. Then add this line
+```
+REACT_APP_GOOGLE_MAPS_API_KEY="${theKeyYouCreate}"
+```
