@@ -25,7 +25,7 @@ function Cuisine() {
                 Eat
             </button>
             <div class="mainContent">
-                <div class="mainImage">
+                <div class="mainImage" id="map">
                     <GoogleMap
                         zoom={10}
                         center={{ lat: latitude, lng: longitude}}
@@ -37,9 +37,6 @@ function Cuisine() {
                 </div>
                 <button onClick={() => nearbySearch()}>
                 searchNearbyRestaurant
-                </button>
-                <button onClick={() => addMarker()}>
-                addMarker
                 </button>
                 <GoogleMap id='map2'></GoogleMap>
                 <p id='restaurantList'></p>
@@ -58,6 +55,11 @@ function Cuisine() {
             location: currentPos,
             radius: '5000',
         };
+        const map = new window.google.maps.Map(document.getElementById("map"), {
+            zoom: 12,
+            center: { lat: latitude, lng: longitude },
+        });
+        // const map = document.getElementById('map');
 
         service.nearbySearch(request, function(results, status) {
             console.log("Call Google nearbySearch API")
@@ -106,19 +108,18 @@ function Cuisine() {
 
                 restaurantHtml.appendChild(restaurantInfoDiv);
                 restaurantList.append(restaurantHtml)
+
+                addMarker(map, {lat: results[i].geometry.location.lat(), lng: results[i].geometry.location.lng()})
               }
             }
         });
     }
 
-    // TODO add markers of the nearbyRestaurant to the app
-    const addMarker = () => {
-        // console.log(document.getElementById('map'));
-        // let map = new window.google.maps.Map(document.getElementById("map2"));
-        // const marker = new window.google.maps.Marker({
-        //     map,
-        //     position: new window.google.maps.LatLng(-33.8665433,151.1956316),
-        //   });
+    const addMarker = (map, latlng) => {
+        const marker = new window.google.maps.Marker({
+            position: latlng,
+            map: map,
+        });
     }
 
 
