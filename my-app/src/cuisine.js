@@ -31,13 +31,11 @@ function Cuisine() {
                         center={{ lat: latitude, lng: longitude}}
                         mapContainerClassName="map-container"
                         id='map'
+                        onLoad={(map) => nearbySearch(map)}
                     >
                         <Marker position={{lat: latitude, lng: longitude}} />
                     </GoogleMap>
                 </div>
-                <button onClick={() => nearbySearch()}>
-                searchNearbyRestaurant
-                </button>
                 <GoogleMap id='map2'></GoogleMap>
                 <p id='restaurantList'></p>
                 <div class="nearbyrestaurants" id="nearbyRestaurants"></div>
@@ -55,11 +53,11 @@ function Cuisine() {
             location: currentPos,
             radius: '5000',
         };
+
         const map = new window.google.maps.Map(document.getElementById("map"), {
             zoom: 12,
             center: { lat: latitude, lng: longitude },
         });
-        // const map = document.getElementById('map');
 
         service.nearbySearch(request, function(results, status) {
             console.log("Call Google nearbySearch API")
@@ -76,7 +74,7 @@ function Cuisine() {
                 const imageDiv = document.createElement("div");
                 imageDiv.classList.add("restaurantImage")
                 const restaurantImg = document.createElement("img");
-                restaurantImg.src = require('./Images/' + searchParams.get('nationality') + '.jpg');
+                restaurantImg.src = results[i].photos[0].getUrl()
                 restaurantImg.alt = "Food";
                 imageDiv.appendChild(restaurantImg);
                 restaurantHtml.appendChild(imageDiv);
@@ -86,7 +84,7 @@ function Cuisine() {
                 restaurantInfoDiv.classList.add("restaurantInfo");
                 const restaurantNameSpan = document.createElement("span");
                 restaurantNameSpan.classList.add("restaurantName");
-                restaurantNameSpan.innerText = results[i].name;
+                restaurantNameSpan.innerText = (i+1).toString() + ". " + results[i].name;
 
                 const restaurantInfoList = document.createElement("ul");
                 const latlngNode = document.createElement("li");
@@ -108,18 +106,23 @@ function Cuisine() {
 
                 restaurantHtml.appendChild(restaurantInfoDiv);
                 restaurantList.append(restaurantHtml)
+                console.log(results[i])
 
-                addMarker(map, {lat: results[i].geometry.location.lat(), lng: results[i].geometry.location.lng()})
+                addMarker(i, map, {lat: results[i].geometry.location.lat(), lng: results[i].geometry.location.lng()})
               }
             }
         });
     }
 
-    const addMarker = (map, latlng) => {
+    const addMarker = (i, map, latlng) => {
         const marker = new window.google.maps.Marker({
             position: latlng,
             map: map,
+            label: (i+1).toString()
         });
+        marker.addListener("click", ()=>{
+            alert("Icon is clicked")
+        })
     }
 
 
