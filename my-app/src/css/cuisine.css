@@ -40,7 +40,7 @@
     margin-top: -50px;
   }
 
-  .mainImage img {
+  .mainImage {
     width: 1200px;
     height: 700px;
     border-radius: 20px;
@@ -102,6 +102,9 @@
     margin-left: -35px;
   }
 
+  .map-container {
+    height: 60vh;
+  }
 
   body, html {
     height: 100%;
